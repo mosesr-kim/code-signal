@@ -1,4 +1,4 @@
 # code-signal
 
 
-My solutions for CodeSignal algorithims!
+My solutions for CodeSignal algorithms!
