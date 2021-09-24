@@ -29,3 +29,14 @@ Guaranteed constraints:
 
 Return true if it is possible to remove one element from the array in order to get a strictly increasing sequence, otherwise return false.
 */
+function almostIncreasingSequence(sequence) {
+  let errors = 0;
+  for (let i = 1; i < sequence.length; i++) {
+    if (sequence[i - 1] >= sequence[i]) {
+      errors++;
+      if (errors > 1) return false;
+      if (sequence[i - 2] >= sequence[i] && sequence[i - 1] >= sequence[i + 1]) return false;
+    }
+  }
+  return true;
+}
