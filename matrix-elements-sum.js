@@ -46,3 +46,22 @@ Guaranteed constraints:
 
 The total price of all the rooms that are suitable for the CodeBots to live in.
 */
+function matrixElementsSum(matrix) {
+  let sum = 0;
+  const haunted = [];
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      if (i === 0) {
+        if (matrix[i][j] === 0) {
+          haunted.push(j);
+        }
+        sum += matrix[i][j];
+      } else {
+        if (matrix[i - 1][j] !== 0 && !haunted.includes(j)) {
+          sum += matrix[i][j];
+        };
+      }
+    }
+  }
+  return sum;
+}
